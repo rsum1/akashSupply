@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Stacked Area Chart</title>
+    <script src="https://cdn.anychart.com/releases/8.8.0/js/anychart-core.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.8.0/js/anychart-data-adapter.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.8.0/js/anychart-cartesian.min.js"></script>
+    <style>
+      html,
+      body,
+      #container {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container"></div>
+
+    <script>
+      anychart.onDocumentReady(function () {
+        // create data set
+        var dataSet = anychart.data.set([
+          ["9/25/2020", 1800000, 0, 0, 1000000, 0, 0, 0, 2800000],
+          [
+            "10/25/2020",
+            1800000,
+            0,
+            0,
+            9871176,
+            2000000,
+            800000,
+            800000,
+            15271176,
+          ],
+          [
+            "11/25/2020",
+            1800000,
+            0,
+            0,
+            9871176,
+            2000000,
+            800000,
+            800000,
+            15271176,
+          ],
+          [
+            "12/25/2020",
+            1800000,
+            0,
+            0,
+            9871176,
+            2000000,
+            800000,
+            800000,
+            15271176,
+          ],
+          [
+            "1/25/2021",
+            1800000,
+            0,
+            0,
+            9871176,
+            2000000,
+            800000,
+            800000,
+            15271176,
+          ],
+          [
+            "2/25/2021",
+            1800000,
+            0,
+            0,
+            9871176,
+            2000000,
+            800000,
+            800000,
+            15271176,
+          ],
+          [
+            "3/25/2021",
+            1800000,
+            0,
+            0,
+            9871176,
+            2000000,
+            800000,
+            800000,
+            15271176,
+          ],
+          [
+            "4/25/2021",
+            1800000,
+            0,
+            0,
+            13992351,
+            3500000,
+            1850000,
+            1600000,
+            22742351,
+          ],
+          [
+            "5/25/2021",
+            1800000,
+            0,
+            0,
+            13992351,
+            3500000,
+            1850000,
+            1600000,
+            22742351,
+          ],
+          [
+            "6/25/2021",
+            1800000,
+            0,
+            0,
+            13992351,
+            3500000,
+            1850000,
+            1600000,
+            22742351,
+          ],
+          [
+            "7/25/2021",
+            1800000,
+            0,
+            0,
+            13992351,
+            3500000,
+            1850000,
+            1600000,
+            22742351,
+          ],
+          [
+            "8/25/2021",
+            1800000,
+            0,
+            0,
+            13992351,
+            3500000,
+            1850000,
+            1600000,
+            22742351,
+          ],
+          [
+            "9/25/2021",
+            1800000,
+            17255394,
+            13500000,
+            13992351,
+            3500000,
+            1850000,
+            1600000,
+            53497745,
+          ],
+          [
+            "10/25/2021",
+            1800000,
+            17255394,
+            13500000,
+            13992351,
+            3500000,
+            1850000,
+            1600000,
+            53497745,
+          ],
+          [
+            "11/25/2021",
+            1800000,
+            17255394,
+            13500000,
+            13992351,
+            3500000,
+            1850000,
+            1600000,
+            53497745,
+          ],
+          [
+            "12/25/2021",
+            1800000,
+            17255394,
+            13500000,
+            13992351,
+            3500000,
+            1850000,
+            1600000,
+            53497745,
+          ],
+          [
+            "1/25/2022",
+            1800000,
+            17255394,
+            13500000,
+            13992351,
+            3500000,
+            1850000,
+            1600000,
+            53497745,
+          ],
+          [
+            "2/25/2022",
+            1800000,
+            17255394,
+            13500000,
+            13992351,
+            3500000,
+            1850000,
+            1600000,
+            53497745,
+          ],
+          [
+            "3/25/2022",
+            1800000,
+            25883091,
+            20250000,
+            16113527,
+            5000000,
+            2900000,
+            2400000,
+            74346618,
+          ],
+          [
+            "4/25/2022",
+            1800000,
+            25883091,
+            20250000,
+            16113527,
+            5000000,
+            2900000,
+            2400000,
+            74346618,
+          ],
+          [
+            "5/25/2022",
+            1800000,
+            25883091,
+            20250000,
+            16113527,
+            5000000,
+            2900000,
+            2400000,
+            74346618,
+          ],
+          [
+            "6/25/2022",
+            1800000,
+            25883091,
+            20250000,
+            16113527,
+            5000000,
+            2900000,
+            2400000,
+            74346618,
+          ],
+          [
+            "7/25/2022",
+            1800000,
+            25883091,
+            20250000,
+            16113527,
+            5000000,
+            2900000,
+            2400000,
+            74346618,
+          ],
+          [
+            "8/25/2022",
+            1800000,
+            25883091,
+            20250000,
+            16113527,
+            5000000,
+            2900000,
+            2400000,
+            74346618,
+          ],
+          [
+            "9/25/2022",
+            1800000,
+            34510788,
+            27000000,
+            18234702,
+            6500000,
+            3950000,
+            3200000,
+            95195490,
+          ],
+          [
+            "10/25/2022",
+            1800000,
+            34510788,
+            27000000,
+            18234702,
+            6500000,
+            3950000,
+            3200000,
+            95195490,
+          ],
+          [
+            "11/25/2022",
+            1800000,
+            34510788,
+            27000000,
+            18234702,
+            6500000,
+            3950000,
+            3200000,
+            95195490,
+          ],
+          [
+            "12/25/2022",
+            1800000,
+            34510788,
+            27000000,
+            18234702,
+            6500000,
+            3950000,
+            3200000,
+            95195490,
+          ],
+          [
+            "1/25/2023",
+            1800000,
+            34510788,
+            27000000,
+            18234702,
+            6500000,
+            3950000,
+            3200000,
+            95195490,
+          ],
+          [
+            "2/25/2023",
+            1800000,
+            34510788,
+            27000000,
+            18234702,
+            6500000,
+            3950000,
+            3200000,
+            95195490,
+          ],
+          [
+            "3/25/2023",
+            1800000,
+            34510788,
+            27000000,
+            19689212,
+            8000000,
+            5000000,
+            4000000,
+            100000000,
+          ],
+        ])
+
+        // map data for the first series, take x from the zero column and value from the first column of data set
+        var aktPublicSale = dataSet.mapAs({ x: 0, value: 1 })
+
+        // map data for the second series, take x from the zero column and value from the second column of data set
+        var aktInvestors = dataSet.mapAs({ x: 0, value: 2 })
+
+        // map data for the second series, take x from the zero column and value from the third column of data set
+        var aktTeamAdv = dataSet.mapAs({ x: 0, value: 3 })
+
+        // map data for the fourth series, take x from the zero column and value from the fourth column of data set
+        var aktFoundation = dataSet.mapAs({ x: 0, value: 4 })
+
+        // map data for the fifth series, take x from the zero column and value from the fourth column of data set
+        var aktEcosystem = dataSet.mapAs({ x: 0, value: 5 })
+
+        // map data for the sixth series, take x from the zero column and value from the fourth column of data set
+        var aktTestnets = dataSet.mapAs({ x: 0, value: 6 })
+
+        // map data for the seventh series, take x from the zero column and value from the fourth column of data set
+        var aktVendMark = dataSet.mapAs({ x: 0, value: 7 })
+
+        // map data for the eighth series, take x from the zero column and value from the fourth column of data set
+        var aktGenCirc = dataSet.mapAs({ x: 0, value: 8 })
+
+        // create bar chart
+        var chart = anychart.area()
+
+        // turn on chart animation
+        chart.animation(true)
+
+        // turn on the crosshair
+        var crosshair = chart.crosshair()
+        crosshair.enabled(true).yStroke(null).xStroke("#fff").zIndex(39)
+        crosshair.yLabel().enabled(false)
+
+        // force chart to stack values by Y scale.
+        chart.yScale().stackMode("value")
+
+        chart.yScale().maximum(100000000)
+
+        // set chart title text settings
+        chart.title("Akash (AKT) Supply Metrics")
+
+        // helper function to setup label settings for all series
+        var setupSeriesLabels = function (series, name) {
+          series
+            .name(name)
+            .stroke("3 #fff 1")
+            .fill(function () {
+              return this.sourceColor + " 0.8"
+            })
+          series.hovered().stroke("3 #fff 1")
+          series
+            .hovered()
+            .markers()
+            .enabled(true)
+            .type("circle")
+            .size(4)
+            .stroke("1.5 #fff")
+          series.markers().zIndex(100)
+        }
+
+        // temp variable to store series instance
+        var series
+
+        // create first series with mapped data
+        series = chart.area(aktPublicSale)
+        setupSeriesLabels(series, "Public Sale")
+
+        // create second series with mapped data
+        series = chart.area(aktInvestors)
+        setupSeriesLabels(series, "Investors")
+
+        // create third series with mapped data
+        series = chart.area(aktTeamAdv)
+        setupSeriesLabels(series, "Team & Advisors")
+
+        // create fourth series with mapped data
+        series = chart.area(aktFoundation)
+        setupSeriesLabels(series, "Foundation")
+
+        // create fourth series with mapped data
+        series = chart.area(aktEcosystem)
+        setupSeriesLabels(series, "Ecosystem")
+
+        // create fourth series with mapped data
+        series = chart.area(aktTestnets)
+        setupSeriesLabels(series, "Testnets")
+
+        // create fourth series with mapped data
+        series = chart.area(aktVendMark)
+        setupSeriesLabels(series, "Vendors & Marketing")
+
+        // create fourth series with mapped data
+        //series = chart.area(aktGenCirc)
+        //setupSeriesLabels(series, "Genesis Tokens in Circulation")
+
+        // turn on legend
+        chart.legend().enabled(true).fontSize(13).padding([0, 0, 20, 0])
+
+        // set titles for axises
+        chart.xAxis().title("Date")
+        chart.yAxis().title("Akash Tokens (AKT)")
+
+        // interactivity and tooltip settings
+        chart.interactivity().hoverMode("by-x")
+
+        var formatter = "{%seriesName}: {%value}{groupsSeparator:\\,} AKT"
+
+        chart.tooltip().format(formatter)
+
+        // set container id for the chart
+        chart.container("container")
+
+        // initiate chart drawing
+        chart.draw()
+      })
+    </script>
+  </body>
+</html>
